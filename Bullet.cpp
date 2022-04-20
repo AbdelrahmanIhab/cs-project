@@ -15,11 +15,14 @@
     }
 
     void Bullet::move(){
-    QList<QGraphicsItem *> colliding_items = collidingItems();
-    for(int i=0,n=colliding_items.size();i<n;++i){
+        // if bullet collides with enemy, destroy both
+    QList<QGraphicsItem *> colliding_items = collidingItems(); // a function that returns a list of pointers to all the QGraphicItems that the bullet collides with
+
+    for(int i=0,n=colliding_items.size();i<n;++i){ //this loop traverses through the list and checks if a collision occurs
         if(typeid(*(colliding_items[i]))== typeid(Enemy)){
-            scene()->removeItem(colliding_items[i]);
-            scene()->removeItem(this);
+            //if the condition is true, remove the bullet and the enemy
+            scene()->removeItem(colliding_items[i]); //for removing the enemy
+            scene()->removeItem(this); //for removing the bullet
             delete colliding_items[i];
             delete this;
             return;
@@ -29,7 +32,6 @@
         if(direction=='u')
         {
             setPos(x(),y()-10);
-
         }
         else if(direction=='d')
         {

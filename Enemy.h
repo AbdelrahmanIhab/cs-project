@@ -4,7 +4,7 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsRectItem>
 #include <QObject>
-class Enemy: public QObject, public QGraphicsPixmapItem{
+class Enemy : public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
     private:
     char direction;
@@ -12,7 +12,6 @@ class Enemy: public QObject, public QGraphicsPixmapItem{
         Enemy();
     public slots:
         void move();
-
 };
 
 

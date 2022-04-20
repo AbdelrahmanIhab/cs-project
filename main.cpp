@@ -1,8 +1,9 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include "MyRect.h"
+#include "Score.h"
 #include <QGraphicsView>
-#include <QTimer>
+#include <QTimer> //mainly used for creating enemies
 
 
 int main(int argc, char *argv[])
@@ -28,13 +29,17 @@ int main(int argc, char *argv[])
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->show();
 
+    // Creating the score
+    Score *score;
+    score = new Score();
+    scene->addItem(score);
+
     view->setFixedSize(800,800);
     scene->setSceneRect(0,0,800,800);
 
     //player spawn position (at the middle of the scene atm **SHOULD BE CHANGED DEPENDING ON LEVEL**)
     player->setPos(view->width()/2-player->rect().width()/2,(view->height()/2-player->rect().height()/2));
     QTimer *timer = new QTimer();
-    QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
-    timer->start(5000);
+   // QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn())); (used for spawning enemies periodically)
     return a.exec();
 }

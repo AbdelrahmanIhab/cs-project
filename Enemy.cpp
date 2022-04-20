@@ -1,13 +1,15 @@
 #include "Enemy.h"
 #include <QTimer>
-#include <stdlib.h>
-    Enemy::Enemy(){
+#include<QGraphicsScene>
+#include<QList>
+#include <stdlib.h> //for the rand function
+    Enemy::Enemy():QObject(),QGraphicsPixmapItem(){ //need to work on a position parameter for each enemy
 
         setPixmap(QPixmap(":/images/bubble-bass.png"));
         int randno= rand()%1000;
-        //setPos(randno);
+        //setPos(randno); need to make the set position based on each enemy, won't need the random function
 
-        QTimer * timer = new QTimer();
+        QTimer * timer = new QTimer(this);
         connect(timer,SIGNAL(timeout()),this,SLOT(move()));
 
 
