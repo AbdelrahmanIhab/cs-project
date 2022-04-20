@@ -4,8 +4,10 @@
 #include <QObject>
 class Bullet: public QObject, public QGraphicsRectItem{
     Q_OBJECT
+    private:
+    char direction;
     public:
-        Bullet();
+        Bullet(char);
     public slots:
         void move();
 

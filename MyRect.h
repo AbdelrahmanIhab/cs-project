@@ -3,6 +3,8 @@
 #include <QGraphicsRectItem>
 
 class MyRect: public QGraphicsRectItem{
+private:
+    char direction;
 public:
     void keyPressEvent(QKeyEvent *event);
 
