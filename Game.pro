@@ -10,11 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     Bullet.cpp \
+    Enemy.cpp \
     MyRect.cpp \
     main.cpp
 
 HEADERS += \
     Bullet.h \
+    Enemy.h \
     MyRect.h
 
 FORMS +=
@@ -23,3 +25,6 @@ FORMS +=
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Resources.qrc

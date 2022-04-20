@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Bullet.png</file>
+        <file>Background1.jpg</file>
+        <file>smurf.png</file>
+        <file>bubble-bass.png</file>
+    </qresource>
+</RCC>
