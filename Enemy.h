@@ -1,17 +1,20 @@
-#ifndef BULLET_H
-#define BULLET_H
+#ifndef ENEMY_H
+#define ENEMY_H
+
 #include <QGraphicsPixmapItem>
 #include <QGraphicsRectItem>
 #include <QObject>
-class Bullet: public QObject, public QGraphicsPixmapItem{
+class Enemy: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
     private:
     char direction;
     public:
-        Bullet(char);
+        Enemy();
     public slots:
         void move();
 
 };
 
-#endif // BULLET_H
+
+
+#endif // ENEMY_H
