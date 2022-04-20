@@ -24,7 +24,7 @@
         {
             setPos(x()-10,y());
         }
-        else if(direction=='r')
+        else
         {
             setPos(x()+10,y());
         }
