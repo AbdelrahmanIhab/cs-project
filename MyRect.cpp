@@ -1,14 +1,15 @@
 #include "MyRect.h"
-#include "Bullet.h"
 #include <QKeyEvent>
 #include <QGraphicsScene>
-#include "Enemy.h"
+
 void MyRect::keyPressEvent(QKeyEvent *event)
 {
-    if(event->key() == Qt::Key_Left){
+    if(event->key() == Qt::Key_Left){ //adjust limit so that it moves to switch the view
         if(pos().x()>0){
             setPos(x()-20,y());
-            direction = 'l';}
+            direction = 'l';}        // need to change it so that it is compared to the value not the pixels
+
+
         }
         else if(event->key() == Qt::Key_Right){
             if(pos().x()+100 <1200){
@@ -34,6 +35,6 @@ void MyRect::keyPressEvent(QKeyEvent *event)
 
 void MyRect::spawn()
 {
-    Enemy *Enemy= new Enemy();
+    Enemy Enemy= new Enemy();
     scene()->addItem(Enemy);
 }

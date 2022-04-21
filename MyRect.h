@@ -2,8 +2,11 @@
 #define MYRECT_H
 #include <QGraphicsRectItem>
 #include <QObject>
+#include "Enemy.h"
+
+#include "Bullet.h"
 class MyRect: public QGraphicsRectItem{
-    Q_OBJECT
+    Q_OBJECT //macro
 private:
     char direction;
 public:
